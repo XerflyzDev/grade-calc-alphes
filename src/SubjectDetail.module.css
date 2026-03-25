@@ -1,0 +1,92 @@
+.page { padding: 2.5rem 2.5rem; max-width: 1000px; }
+
+.breadcrumb { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 1.5rem; }
+.breadLink { background: none; color: var(--text2); font-size: 0.85rem; padding: 0; }
+.breadLink:hover { color: var(--primary); }
+.breadSep { color: var(--text3); }
+.breadCurrent { font-size: 0.85rem; color: var(--primary); font-weight: 500; }
+
+.titleRow { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2.5rem; }
+.titleLeft { flex: 1; }
+.title { font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; }
+.titleMeta { display: flex; gap: 1.25rem; font-size: 0.82rem; color: var(--text3); }
+
+.gradeCard { background: white; border-radius: var(--radius); padding: 1.25rem 1.75rem; box-shadow: var(--shadow); min-width: 210px; }
+.gradeCardLabel { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; color: var(--text3); }
+.gradeCardNum { font-size: 2rem; font-weight: 800; color: var(--primary); margin: 0.2rem 0 0.75rem; }
+.gradeCardOf { font-size: 1.1rem; color: var(--text3); font-weight: 400; }
+.gradeCardProgress { display: flex; justify-content: space-between; font-size: 0.72rem; margin-bottom: 0.4rem; }
+.gradeCardProgressLabel { color: var(--text3); font-weight: 600; letter-spacing: 0.05em; }
+.gradeCardProgressPct { font-weight: 600; }
+.gradeCardBar { height: 5px; background: var(--border); border-radius: 10px; overflow: hidden; }
+.gradeCardBarFill { height: 100%; background: var(--primary); border-radius: 10px; }
+
+.tableSection { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.tableHeader { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border); }
+.tableHeader h2 { font-size: 1.05rem; font-weight: 700; }
+.addCatBtn { background: none; color: var(--primary); font-weight: 600; font-size: 0.875rem; padding: 0.4rem 0.8rem; border: 1.5px solid var(--primary); border-radius: var(--radius-sm); }
+.addCatBtn:hover { background: var(--primary-light); }
+
+.table { width: 100%; }
+.tableHead {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr 0.5fr;
+  padding: 0.6rem 1.75rem; background: var(--surface2);
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.07em; color: var(--text3);
+  gap: 1rem;
+}
+.tableRow {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr 0.5fr;
+  padding: 1rem 1.75rem; border-bottom: 1px solid var(--border);
+  align-items: center; gap: 1rem;
+  transition: background 0.1s;
+}
+.tableRow:hover { background: var(--surface2); }
+.addRow {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr 0.5fr;
+  padding: 0.75rem 1.75rem; border-bottom: 1px solid var(--border);
+  align-items: center; gap: 1rem; background: var(--primary-light);
+}
+.colName { display: flex; align-items: center; gap: 0.6rem; min-width: 0; }
+.colWeight, .colFull, .colObtained, .colWeighted, .colAction { display: flex; align-items: center; }
+.colAction { gap: 0.3rem; }
+
+.compIcon { font-size: 0.9rem; color: var(--primary); background: var(--primary-light); width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.compName { font-size: 0.875rem; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.pill { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.6rem; font-size: 0.82rem; color: var(--text2); }
+
+.scoreInput { width: 80px !important; padding: 0.35rem 0.6rem !important; font-size: 0.85rem !important; text-align: center; background: var(--surface2) !important; }
+.scoreInputFilled { background: var(--primary-light) !important; border-color: var(--primary) !important; color: var(--primary) !important; font-weight: 600; }
+
+.weightedFilled { font-weight: 600; color: var(--text); font-size: 0.875rem; }
+.weightedPending { color: var(--text3); font-size: 0.875rem; }
+
+.addRowInput { width: 100% !important; padding: 0.35rem 0.6rem !important; font-size: 0.82rem !important; background: white !important; }
+.confirmAddBtn { background: var(--success); color: white; padding: 0.3rem 0.6rem; font-size: 0.85rem; }
+.cancelAddBtn { background: none; color: var(--text3); border: 1px solid var(--border2); padding: 0.3rem 0.5rem; font-size: 0.85rem; }
+.deleteRowBtn { background: none; color: var(--text3); padding: 0.25rem 0.4rem; font-size: 0.85rem; }
+.deleteRowBtn:hover { color: var(--danger); }
+
+.tableFooter { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.75rem; }
+.footerLegend { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text2); }
+.legendDot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.footerActions { display: flex; gap: 0.75rem; }
+.btnGhost { background: none; color: var(--text2); border: 1.5px solid var(--border2); padding: 0.55rem 1.1rem; }
+.btnGhost:hover { color: var(--primary); border-color: var(--primary); }
+.btnPrimary { background: var(--primary); color: white; font-weight: 600; padding: 0.55rem 1.3rem; }
+.btnPrimary:hover:not(:disabled) { background: var(--primary-hover); }
+.btnPrimary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.analysisCTA {
+  margin-top: 1.5rem; background: white; border-radius: var(--radius); padding: 1.5rem 2rem;
+  box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+}
+.analysisCTA strong { font-size: 0.95rem; display: block; margin-bottom: 0.2rem; }
+.analysisCTA p { font-size: 0.83rem; color: var(--text2); }
+
+@media (max-width: 768px) {
+  .page { padding: 1.25rem 1rem; }
+  .titleRow { flex-direction: column; }
+  .tableHead, .tableRow, .addRow { grid-template-columns: 2fr 0.8fr 0.8fr 0.8fr; }
+  .colWeighted, .colAction { display: none; }
+}

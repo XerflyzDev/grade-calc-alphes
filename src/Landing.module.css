@@ -1,0 +1,90 @@
+.page { min-height: 100vh; background: #F8FAFB; }
+
+/* Header */
+.header { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.headerInner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 56px; display: flex; align-items: center; gap: 2rem; }
+.logo { font-weight: 700; font-size: 1rem; color: var(--text); flex-shrink: 0; }
+.nav { display: flex; gap: 1.5rem; flex: 1; }
+.nav a { font-size: 0.875rem; color: var(--text2); }
+.navActive { color: var(--primary) !important; font-weight: 600; border-bottom: 2px solid var(--primary); padding-bottom: 2px; }
+.headerRight { display: flex; align-items: center; gap: 0.75rem; }
+.headerBell { background: none; color: var(--text2); font-size: 1rem; }
+
+/* Buttons */
+.btnPrimary { background: var(--primary); color: white; font-weight: 600; padding: 0.6rem 1.3rem; border-radius: var(--radius-sm); }
+.btnPrimary:hover { background: var(--primary-hover); }
+.btnOutlined { background: white; color: var(--text); border: 1.5px solid var(--border2); font-weight: 500; padding: 0.6rem 1.3rem; }
+.btnOutlined:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Hero */
+.hero { text-align: center; padding: 5rem 2rem 3rem; max-width: 900px; margin: 0 auto; }
+.heroBadge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary-light); color: var(--primary); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; padding: 0.35rem 0.85rem; border-radius: 100px; margin-bottom: 1.5rem; }
+.heroTitle { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; color: var(--text); margin-bottom: 1.25rem; }
+.heroAccent { color: var(--primary); }
+.heroSub { font-size: 1rem; color: var(--text2); line-height: 1.7; margin-bottom: 2rem; }
+.heroCTA { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap; }
+
+/* App preview mockup */
+.appPreview { position: relative; max-width: 700px; margin: 0 auto; }
+.appPreviewInner { background: #1a1f2e; border-radius: 16px; padding: 1.5rem; box-shadow: 0 24px 60px rgba(0,0,0,0.2); }
+.mockHeader { display: flex; align-items: center; margin-bottom: 1rem; }
+.mockLogo { color: white; font-weight: 700; font-size: 0.9rem; }
+.mockBody { display: flex; gap: 1rem; }
+.mockSidebar { width: 120px; flex-shrink: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.mockNavItem { font-size: 0.7rem; padding: 0.4rem 0.6rem; border-radius: 6px; color: rgba(255,255,255,0.5); }
+.mockContent { flex: 1; }
+.mockTitle { font-size: 0.9rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+.mockCard { flex: 1; background: rgba(255,255,255,0.08); border-radius: 8px; padding: 0.6rem; }
+.mockCardTitle { font-size: 0.65rem; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem; }
+.mockBar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+.mockBarFill { height: 100%; width: 70%; background: var(--primary); border-radius: 10px; }
+.gpaFloating { position: absolute; bottom: -16px; right: -12px; background: white; border-radius: 10px; padding: 0.6rem 1rem; box-shadow: var(--shadow-md); font-size: 0.8rem; color: var(--text2); }
+.gpaFloating strong { color: var(--primary); font-size: 1.1rem; margin-left: 4px; }
+
+/* Features */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 5rem auto 0; padding: 0 2rem; }
+.featureCard { padding: 1.5rem; }
+.featureIcon { font-size: 1.4rem; margin-bottom: 0.75rem; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--primary-light); border-radius: 10px; }
+.featureCard h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+.featureCard p { font-size: 0.85rem; color: var(--text2); line-height: 1.6; }
+
+/* Auth section */
+.authSection { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 900px; margin: 6rem auto; padding: 0 2rem; align-items: center; }
+.authLeft h2 { font-size: 1.8rem; font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+.authLeft p { color: var(--text2); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.25rem; }
+.authPerks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.authPerks li { font-size: 0.875rem; color: var(--text2); display: flex; align-items: center; gap: 0.5rem; }
+
+.authCard { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-md); }
+.authTabs { display: flex; border-bottom: 1.5px solid var(--border); margin-bottom: 1.5rem; }
+.tab, .tabActive { background: none; padding: 0.5rem 1rem; font-size: 0.9rem; border-radius: 0; color: var(--text2); border-bottom: 2px solid transparent; margin-bottom: -1.5px; }
+.tabActive { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+.authForm { display: flex; flex-direction: column; gap: 1rem; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; color: var(--text2); }
+.field input { width: 100%; background: white; border-color: var(--border2); }
+.field input:focus { border-color: var(--primary); }
+.btnSubmit { background: var(--primary); color: white; font-weight: 600; padding: 0.75rem; width: 100%; font-size: 0.9rem; margin-top: 0.25rem; }
+.btnSubmit:hover:not(:disabled) { background: var(--primary-hover); }
+.btnSubmit:disabled { opacity: 0.6; cursor: not-allowed; }
+.terms { font-size: 0.75rem; color: var(--text3); text-align: center; line-height: 1.5; }
+.msgError { background: var(--danger-light); color: var(--danger); padding: 0.6rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.83rem; }
+.msgSuccess { background: var(--success-light); color: var(--success); padding: 0.6rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.83rem; }
+
+/* Footer */
+.footer { background: white; border-top: 1px solid var(--border); padding: 2rem; display: flex; align-items: center; gap: 1rem; justify-content: space-between; flex-wrap: wrap; }
+.footerLogo { font-weight: 700; font-size: 0.9rem; }
+.footerTagline { font-size: 0.8rem; color: var(--text3); }
+.footerLinks { display: flex; gap: 1.25rem; }
+.footerLinks a { font-size: 0.8rem; color: var(--text2); }
+.footerLinks a:hover { color: var(--primary); }
+.footerCopy { font-size: 0.78rem; color: var(--text3); }
+
+@media (max-width: 768px) {
+  .features { grid-template-columns: 1fr; }
+  .authSection { grid-template-columns: 1fr; gap: 2rem; }
+  .nav { display: none; }
+  .mockBody { flex-direction: column; }
+  .mockSidebar { width: 100%; flex-direction: row; }
+  .footer { flex-direction: column; text-align: center; }
+}
