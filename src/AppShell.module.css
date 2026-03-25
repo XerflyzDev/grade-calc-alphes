@@ -64,10 +64,12 @@
   display: flex; align-items: center; justify-content: center;
 }
 
-.content { flex: 1; overflow-y: auto; }
+/* Content: center the inner pages */
+.content { flex: 1; overflow-y: auto; display: flex; justify-content: center; }
+.content > * { width: 100%; max-width: 1000px; }
 
-.loadingState { padding: 4rem 2rem; text-align: center; color: var(--text2); }
-.emptyState { padding: 4rem 2rem; text-align: center; color: var(--text2); display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.loadingState { padding: 4rem 2rem; text-align: center; color: var(--text2); width: 100%; }
+.emptyState { padding: 4rem 2rem; text-align: center; color: var(--text2); display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; }
 .btnPrimary { background: var(--primary); color: white; font-weight: 600; padding: 0.65rem 1.5rem; }
 .btnPrimary:hover { background: var(--primary-hover); }
 
