@@ -16,38 +16,36 @@ export function getGrade(score) {
   return GRADE_THRESHOLDS[GRADE_THRESHOLDS.length - 1]
 }
 
+// score_pct is 0-100 directly; weight is the % weight of the assessment
 export function calcSubjectScore(components) {
-  const filled = components.filter(c => c.score != null && c.score !== '')
-  const unfilled = components.filter(c => c.score == null || c.score === '')
-  const totalWeight = components.reduce((s, c) => s + c.weight, 0)
-  const filledWeight = filled.reduce((s, c) => s + c.weight, 0)
-  const earnedPoints = filled.reduce((s, c) => s + (parseFloat(c.score) / parseFloat(c.max_score)) * c.weight, 0)
+  const filled   = components.filter(c => c.score_pct != null && c.score_pct !== '')
+  const unfilled = components.filter(c => c.score_pct == null || c.score_pct === '')
+  const totalWeight    = components.reduce((s, c) => s + c.weight, 0)
+  const filledWeight   = filled.reduce((s, c) => s + c.weight, 0)
+  // earnedPoints = sum of (score_pct/100)*weight — expressed as weighted score out of totalWeight
+  const earnedPoints   = filled.reduce((s, c) => s + (parseFloat(c.score_pct) / 100) * c.weight, 0)
   const remainingWeight = unfilled.reduce((s, c) => s + c.weight, 0)
-  // current % based on weight captured so far
-  const currentPct = filledWeight > 0 ? (earnedPoints / filledWeight) * 100 : null
-  // projected if remaining is 0
   const worstCase = totalWeight > 0 ? (earnedPoints / totalWeight) * 100 : 0
-  // projected if remaining is 100%
-  const bestCase = totalWeight > 0 ? ((earnedPoints + remainingWeight) / totalWeight) * 100 : 0
-  return { earnedPoints, filledWeight, remainingWeight, totalWeight, currentPct, worstCase, bestCase, filled, unfilled }
+  const bestCase  = totalWeight > 0 ? ((earnedPoints + remainingWeight) / totalWeight) * 100 : 0
+  return { earnedPoints, filledWeight, remainingWeight, totalWeight, worstCase, bestCase, filled, unfilled }
 }
 
 export function getAnalysis(components) {
   const { earnedPoints, remainingWeight, totalWeight, worstCase, bestCase } = calcSubjectScore(components)
   return GRADE_THRESHOLDS.map(t => {
-    const needed = t.min - earnedPoints  // points still needed from remaining
-    const secured = worstCase >= t.min   // even with 0 on remaining, still get this grade
-    const possible = bestCase >= t.min   // possible to achieve
-    const pctOfRemaining = remainingWeight > 0 ? (needed / remainingWeight) * 100 : 0
-    const progressPct = totalWeight > 0 ? Math.min(100, (earnedPoints / t.min) * 100) : 0
+    const needed          = t.min - earnedPoints          // weighted points still needed
+    const secured         = worstCase >= t.min
+    const possible        = bestCase  >= t.min
+    // avg % student must score across ALL remaining assessments
+    const requiredAvgPct  = remainingWeight > 0 ? (needed / remainingWeight) * 100 : 0
+    const progressPct     = totalWeight > 0 ? Math.min(100, (earnedPoints / t.min) * 100) : 0
     return {
       ...t,
-      needed: Math.max(0, needed),
-      pctOfRemaining: Math.max(0, pctOfRemaining),
+      needed:           Math.max(0, needed),
+      requiredAvgPct:   Math.max(0, requiredAvgPct),
       secured,
       possible,
-      currentStanding: totalWeight > 0 ? (earnedPoints / totalWeight) * 100 : 0,
-      progressPct: Math.min(100, progressPct),
+      progressPct:      Math.min(100, progressPct),
     }
   })
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { supabase } from './supabase'
 import { calcSubjectScore, getGrade, calcGPA } from './gradeUtils'
+import { IconTrash } from './Icons'
 import s from './Dashboard.module.css'
 
 function SubjectCard({ subject, components, onClick, onAnalysis, onDelete }) {
@@ -14,7 +15,7 @@ function SubjectCard({ subject, components, onClick, onAnalysis, onDelete }) {
     <div className={s.subjectCard} onClick={onClick}>
       <div className={s.cardHeader}>
         <span className={s.cardTag}>{tag}</span>
-        <button className={s.cardMenu} onClick={e => { e.stopPropagation(); onDelete() }}>✕</button>
+        <button className={s.cardMenu} onClick={e => { e.stopPropagation(); onDelete() }} aria-label="Delete subject"><IconTrash size={13} /></button>
       </div>
       <div className={s.cardTitle}>{subject.name}</div>
       <div className={s.cardSub}>{components.length} assessments</div>
