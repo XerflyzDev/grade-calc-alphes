@@ -114,3 +114,13 @@
   .main { margin-left: 0; }
   .topNav { padding: 0 1rem; }
 }
+
+.avatarBtn {
+  width: 32px; height: 32px; border-radius: 50%;
+  color: white; font-weight: 700; font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; cursor: pointer; border: none;
+  transition: opacity 0.15s;
+}
+.avatarBtn:hover { opacity: 0.85; }
+.avatarBtn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
